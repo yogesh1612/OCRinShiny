@@ -76,7 +76,7 @@ shinyServer(function(input, output, session) {
   output$sentences = renderDataTable({
     
     text = extractedText()
-    tmp = tokenize(text, what = "sentence")
+    tmp = tokens(text, what = "sentence")
     DT::datatable(  
       data.frame(
         sentence = 1:length(tmp[[1]]),
